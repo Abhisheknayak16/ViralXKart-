@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>𝙑𝙄𝙍𝘼𝙇𝙓𝙆𝘼𝙍𝙏 - Optimized</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      overflow-x: hidden;
+    }header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #00ffe1;
+  color: #00ffe1;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  background: #ffcb05;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 15px;
+}
+
+.product-card {
+  background: white;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #2ecc71;
+  margin-top: 5px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #ffcb05;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ffe050;
+}
+
+.footer {
+  text-align: center;
+  background: #111827;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .product-card {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>  <header>
+    <h1>𝙑𝙄𝙍𝘼𝙇𝙓𝙆𝘼𝙍𝙏</h1>
+  </header>  <div class="marquee">
+    <span>🔥 Summer Deals Live | Buy Now | Follow @viralxkart | Exclusive Drops Every 36 Hours 🔥</span>
+  </div>  <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://raw.githubusercontent.com/Abhisheknayak16/ViralXKart-/main/product1.png" alt="Black Pants">
+      <h3>Black & White Stripe Track Pants</h3>
+      <p>Super comfy & trending design. Grab it now!</p>
+      <p class="price">₹299 <del style="color:#888;">₹1999</del></p>
+      <a href="https://fktr.in/By93fNt" class="btn">अभी खरीदें</a>
+    </div><!-- Product 2 -->
+<div class="product-card">
+  <img src="https://raw.githubusercontent.com/Abhisheknayak16/ViralXKart-/main/product2.png" alt="Killer Sneakers">
+  <h3>KILLER Men's Stylish Durable Sneakers</h3>
+  <p>Perfect for urban streetwear lovers. Lightweight & stylish.</p>
+  <p class="price">₹650 <del style="color:#888;">₹1499</del></p>
+  <a href="https://fktr.in/5MplS7x" class="btn">अभी खरीदें</a>
+</div>
+
+  </div>  <div class="footer">
+    © 2025 ViralXKart. All rights reserved.
+  </div></body>
+</html>
