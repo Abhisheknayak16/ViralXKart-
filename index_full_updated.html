@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ViralXKart Products</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product-card {
+      width: 300px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: #2ecc71;
+      font-size: 16px;
+    }
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #ffcb05;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .timer, .stock-status {
+      margin-top: 10px;
+      font-size: 16px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align:center;">𝙑𝙄𝙍𝘼𝙇𝙓𝙆𝘼𝙍𝙏</h1>
+
+<div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="https://raw.githubusercontent.com/Abhisheknayak16/ViralXKart-/main/product1.png" alt="Black Stripe Pants">
+    <h3>Black & White Stripe Track Pants</h3>
+    <p>Cool, stylish & comfy pants for casual wear. Superhit product - 7500+ orders in 30 days!</p>
+    <p class="price">₹299 <del style="color: #999;">₹1,999</del></p>
+    <a href="https://fktr.in/By93fNt" class="buy-btn" id="buy-btn1">अभी खरीदें</a>
+    <div class="timer" id="countdown-timer"></div>
+    <div class="stock-status" id="stock-status"></div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="https://raw.githubusercontent.com/Abhisheknayak16/ViralXKart-/main/product2.png" alt="KILLER Sneakers">
+    <h3>KILLER Men's Stylish Durable Sneakers</h3>
+    <p>Lightweight, durable, and designed for all-day comfort. Perfect for urban streetwear lovers.</p>
+    <p class="price">₹650 <del style="color: #999;">₹1,499</del></p>
+    <a href="https://fktr.in/5MplS7x" class="buy-btn" id="buy-btn2">अभी खरीदें</a>
+    <div class="timer" id="countdown-timer2"></div>
+    <div class="stock-status" id="stock-status2"></div>
+  </div>
+</div>
+
+<!-- Instagram Button -->
+<a href="https://www.instagram.com/viralxkart?igsh=a3I5MTNiZDFzdWRx" target="_blank" style="display:block; text-align:center; margin-top:20px;">
+  <button style="padding: 10px 20px; background: #E1306C; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px;">Follow us on Instagram</button>
+</a>
+
+<script>
+  // Fixed product launch timestamp
+  var fixedStart = 1744452000000; // 2025-04-12 10:00 AM
+  var deadline = fixedStart + (36 * 60 * 60 * 1000);
+
+  function updateTimer(timerId, stockId, buyBtnId) {
+    var now = new Date().getTime();
+    var t = deadline - now;
+
+    if (t >= 0) {
+      var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((t % (1000 * 60)) / 1000);
+      document.getElementById(timerId).innerHTML =
+        "⏳ ऑफर समाप्ति तक समय: " + hours + "h " + minutes + "m " + seconds + "s";
+    } else {
+      document.getElementById(timerId).style.display = "none";
+      document.getElementById(stockId).innerHTML = "❌ Out of Stock!";
+      var btn = document.getElementById(buyBtnId);
+      if (btn) btn.style.display = "none";
+    }
+  }
+
+  setInterval(function () {
+    updateTimer("countdown-timer", "stock-status", "buy-btn1");
+    updateTimer("countdown-timer2", "stock-status2", "buy-btn2");
+  }, 1000);
+</script>
+
+</body>
+</html>
