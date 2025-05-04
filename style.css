@@ -34,3 +34,48 @@ button {
 button:hover {
   background: #218838;
 }
+body {
+  font-family: sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 20px;
+  flex: 1;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.status-bar {
+  margin-top: 20px;
+  font-size: 14px;
+  color: green;
+}
