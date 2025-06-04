@@ -207,11 +207,24 @@ header h1 {
   <h3>Stylish Bracelet</h3>
   <p>Trendy, Stylish, and Comfortable. Perfect accessory for any outfit.</p>
   <p class="price">₹199 <del style="color:#888;">₹399</del> <span style="color:crimson;">(50% OFF)</span></p>
-  <a href="https://www.instagram.com/ViralxKart?igsh=eHR4b3lmYjJxY3Zy" class="btn">DM for Order</a>
+  <a href="https://www.instagram.com/ViralxKart?igsh=eHR4b3lmYjJxY3Zy" <button onclick="openOrderForm('Product Name', 'Price')" class="btn">Buy Now</button>
 </div> </div>
 </div>
   
-
+<!-- Order Form (Hidden by Default) -->
+<div id="orderForm" style="display:none;">
+  <div style="background-color:#fff; padding:20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400px; margin: 30px auto; text-align:center;">
+    <h3 style="font-family: 'Poppins', sans-serif; color: #333;">Order Now</h3>
+    <form id="orderDetailsForm">
+      <input type="text" id="customerName" placeholder="Full Name" required style="padding: 10px; margin: 10px; width: 100%; border-radius: 5px;"/>
+      <input type="email" id="customerEmail" placeholder="Email Address" required style="padding: 10px; margin: 10px; width: 100%; border-radius: 5px;"/>
+      <input type="text" id="customerPhone" placeholder="Phone Number" required style="padding: 10px; margin: 10px; width: 100%; border-radius: 5px;"/>
+      <textarea id="customerAddress" placeholder="Shipping Address" required style="padding: 10px; margin: 10px; width: 100%; border-radius: 5px;"></textarea>
+      <button type="submit" style="background-color:#00ffe1; color: #fff; padding: 12px 20px; border: none; border-radius: 10px; width: 100%; cursor: pointer;">Confirm Order</button>
+    </form>
+    <button onclick="closeOrderForm()" style="margin-top: 10px; padding: 10px 20px; background-color:#ff4f4f; color: #fff; border: none; border-radius: 10px;">Back</button>
+  </div>
+</div>
   </div> <div style="text-align: center; margin-top: 40px;">
   <h3 style="font-size: 18px; margin-bottom: 10px;">Connect with us</h3>
   <a href="https://www.instagram.com/viralxkart?igsh=a3I5MTNiZDFzdWRx" target="_blank" style="text-decoration: none;">
@@ -221,7 +234,26 @@ header h1 {
     <button style="background:#0088cc; color:white; padding:10px 20px; margin: 10px; border:none; border-radius:8px; font-weight:bold;">Join on Telegram</button>
   </a>
   </div> 
-  <div class="footer">
+  <div class="footer"> <script>
+  function openOrderForm(productName, price) {
+    document.getElementById("orderForm").style.display = "block";
+    // Update the order form with product details
+    document.getElementById("orderDetailsForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById('customerName').value;
+      const email = document.getElementById('customerEmail').value;
+      const phone = document.getElementById('customerPhone').value;
+      const address = document.getElementById('customerAddress').value;
+      alert("Order Confirmed! Thank you for your purchase!");
+      closeOrderForm(); // Hide the form after confirmation
+      console.log({ productName, price, name, email, phone, address });
+    });
+  }
+
+  function closeOrderForm() {
+    document.getElementById("orderForm").style.display = "none";
+  }
+  </script>
     © 2025 ViralXKart. All rights reserved.
   </div></body>
 </html>
